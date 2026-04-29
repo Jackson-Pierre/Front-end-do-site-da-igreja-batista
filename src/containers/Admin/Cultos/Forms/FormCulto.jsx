@@ -18,7 +18,7 @@ export function FormCulto({ item, onClose, onUpdate }) {
     async function handleSave(e) {
         e.preventDefault();
         const schema = yup.object().shape({
-            file: isEditing ? yup.mixed() : yup.mixed().required("A imagem é obrigatória"),
+            file: isEditing ? yup.mixed() : yup.mixed(),
             name: yup.string(),
             preacher: yup.string(),
             date: yup.string().required("A data é obrigatória"),

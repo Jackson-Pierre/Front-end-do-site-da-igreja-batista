@@ -21,7 +21,7 @@ export function FormEvent({ item, onClose, onUpdate }) {
     async function handleSave(e) {
         e.preventDefault();
         const schema = yup.object().shape({
-            file: isEditing ? yup.mixed() : yup.mixed().required("A imagem é obrigatória"),
+            file: isEditing ? yup.mixed() : yup.mixed(),
             name: yup.string(),
             month: yup.string(),
             day: yup.string(),
