@@ -16,6 +16,11 @@ export const Modal = styled.div`
         text-align: center;
         font-size: 4rem;
         font-weight: 700;
+
+        @media (max-width: 768px) {
+            line-height: 100%;
+            margin-bottom: 1.5rem;
+        }
     }
 
     p{

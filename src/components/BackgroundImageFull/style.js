@@ -14,6 +14,7 @@ export const Background = styled.div`
     background-size: cover;
     overflow-y: hidden;
     background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
