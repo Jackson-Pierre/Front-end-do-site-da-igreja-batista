@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
+        background-color: var(--background-color);
         overflow-x: hidden;
         font-size: 100%; 
 

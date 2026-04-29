@@ -4,6 +4,7 @@ export const Grid = styled.div`
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: center;
+    flex-direction: row-reverse;
     gap: 60px;
     width: 100%;
     max-width: 1440px;
