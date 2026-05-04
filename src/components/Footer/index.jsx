@@ -13,7 +13,7 @@ export function Footer() {
                     <Visual>
                         <img src={Logo} alt="Logo da igreja" />
                         <p>Uma família para pertencer, um lugar para crescer e uma missão para viver.</p>
-                        <LinkHeader to='/privacy-policy'>Política de Privacidade</LinkHeader>
+                        <LinkHeader className="privacy-policy" to='/privacy-policy'>Política de Privacidade</LinkHeader>
                     </Visual>
                     <div>
                         <Navigation>

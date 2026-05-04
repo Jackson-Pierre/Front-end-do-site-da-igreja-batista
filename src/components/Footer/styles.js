@@ -29,6 +29,10 @@ export const LinkHeader = styled(Link)`
     &:hover {
         color: var(--secondary-color);
     }
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
 export const Copyright = styled.div`
@@ -41,6 +45,10 @@ export const Copyright = styled.div`
         color: var(--white);
         text-align: center;
         font-weight: 500;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
     }
 `
 
@@ -51,6 +59,12 @@ export const FooterContent = styled.div`
     max-width: 1440px;
     justify-content: space-around;
     align-items: start;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 6rem;
+        align-items: center;
+    }
 `
 
 export const Navigation = styled.ul`
@@ -68,12 +82,32 @@ export const Visual = styled.div`
     text-align: center;
     max-width: 442px;
 
+    .privacy-policy{
+        text-decoration: underline;
+    }
+
     p{
         font-size: 1.25rem;
         color: var(--white);
         font-weight: 600;
         max-width: 100%;
         margin-top: -1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 80%;
+
+        .privacy-policy{
+        font-size: 2rem;
+    }
+
+        p{
+            font-size: 2rem;
+        }
+
+        img{
+            width: 40%;
+        }
     }
 `
 
@@ -102,6 +136,24 @@ export const Local = styled.div`
 
             &:hover{
                 filter: brightness(0.8);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        max-width: 80%;
+        p{
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        div{
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+
+            img{
+                width: 80%;
             }
         }
     }
