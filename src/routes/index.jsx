@@ -6,6 +6,7 @@ import Cell from "../containers/Cell/index.jsx";
 import Events from "../containers/Events/index.jsx";
 import Oracao from "../containers/Oracao/index.jsx";
 import Contributions from "../containers/Contributions/index.jsx";
+import PrivacyPolicy from "../containers/PrivacyPolicy/index.jsx";
 import Login from "../containers/Login/index.jsx";
 import Register from "../containers/Register/index.jsx";
 
@@ -26,6 +27,7 @@ export function Router(){
                 <Route path="/eventos" element={<Events />} />
                 <Route path="/oracao" element={<Oracao />} />
                 <Route path="/contribuicao" element={<Contributions />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Route>
 
             <Route path="/admin" element={<AdminLayout />}>

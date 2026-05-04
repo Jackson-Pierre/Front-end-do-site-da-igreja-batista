@@ -66,7 +66,7 @@ export function Footer() {
                     </Local>
                 </FooterContent>
                 <Copyright>
-                    <p>Copyright © 2026 Igreja Batista Life. Todos os direitos reservados.</p>
+                    <p>© 2026 Igreja Batista Life. Todos os direitos reservados.</p>
                 </Copyright>
             </FooterBox>
         </FooterContainer>
