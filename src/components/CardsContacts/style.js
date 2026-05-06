@@ -30,4 +30,10 @@ export const Card = styled.div`
     p{
         max-width: 80%;
     }
+
+    @media (max-width: 768px) {
+        p{
+            font-size: 1.2rem;
+        }
+    }
 `;

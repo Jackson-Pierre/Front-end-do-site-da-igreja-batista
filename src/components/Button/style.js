@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button`
     }};
     padding: ${(props) => {
         if (props.$variant === 'primary') return '2rem 1rem';
-        if (props.$variant === 'secondary') return '2rem 0.8rem';
+        if (props.$variant === 'secondary') return '2rem 1rem';
         return '0.5rem 3.5rem';
     }};
     border-radius: ${(props) => {
@@ -43,7 +43,7 @@ export const ButtonContainer = styled.button`
 
         padding: ${(props) => {
         if (props.$variant === 'primary') return '2rem 1rem';
-        if (props.$variant === 'secondary') return '2rem 0.8rem';
+        if (props.$variant === 'secondary') return '2rem 1rem';
         return '0.5rem 2rem';
         }};
     }
