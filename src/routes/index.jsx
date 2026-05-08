@@ -16,6 +16,7 @@ import CreateEvents from "../containers/Admin/CreateEvents/index.jsx";
 import CreateCultos from "../containers/Admin/CreateCultos/index.jsx";
 import Event from "../containers/Admin/Events/index.jsx";
 import Cultos from "../containers/Admin/Cultos/index.jsx";
+import NotFound from "../containers/NotFound/index.jsx";
 
 export function Router(){
     return(
@@ -39,6 +40,8 @@ export function Router(){
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/cadastro-usuario" element={<Register />} />
+
+                <Route path="*" element={<NotFound />} />
         </Routes>
     )
 }
