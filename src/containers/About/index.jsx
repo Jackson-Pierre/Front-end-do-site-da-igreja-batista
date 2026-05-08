@@ -17,7 +17,7 @@ function About() {
             <Box>
                 <BackgroundImageFull $variant="quaternary">
                     <BoxImage>
-                        <div className="content">
+                        <div>
                             <h2>Nossa história</h2>
                             <p>Uma jornada de fé, propósito e transformação ao longo dos anos</p>
                         </div>

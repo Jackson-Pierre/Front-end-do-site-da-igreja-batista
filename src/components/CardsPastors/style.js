@@ -8,6 +8,7 @@ export const Container = styled.div`
     max-width: 1320px;
     padding: 4rem 0;
     gap: 3.5rem;
+    flex-wrap: wrap;
 `
 
 export const Card = styled.div`
@@ -49,5 +50,17 @@ export const Content = styled.div`
         font-size: 1rem;
         font-weight: 600;
         color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 0 4rem 0;
+
+        h3{
+            font-size: 1.8rem;
+        }
+
+        p{
+            font-size: 1.5rem;
+        }
     }
 `

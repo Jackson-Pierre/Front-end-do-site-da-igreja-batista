@@ -6,6 +6,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+
 `
 
 export const Box = styled.div`
@@ -22,7 +23,7 @@ export const BoxImage = styled.div`
     display: flex;
     align-items: end;
     justify-content: start;
-    padding: 38rem 0 10rem 6rem;
+    padding: 0 0 10rem 6rem;
     height: 100vh;
     width: 100%;
     gap: 2rem;
@@ -37,7 +38,13 @@ export const BoxImage = styled.div`
         color: var(--white);
         font-size: 1.5rem;
         font-weight: 600;
+        width: 90%;
         max-width: 584px;
+    }
+
+    @media (max-width: 768px) {
+        height: 80vh;
+        padding: 20rem 0 10rem 3rem;
     }
 `
 
@@ -82,6 +89,7 @@ export const ContactSection = styled.section`
         font-size: 2.5rem;
         font-weight: 700;
         text-align: center;
+        width: 80%;
         max-width: 480px;
     }
 
@@ -89,6 +97,7 @@ export const ContactSection = styled.section`
         color: var(--styled-font-color);
         font-size: 1.5rem;
         font-weight: 600;
+        width: 80%;
         max-width: 742px;
         text-align: center;
     }
@@ -102,7 +111,11 @@ export const ContainerButtons = styled.div`
     gap: 1rem;
     max-width: 50%;
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+
+    @media (max-width: 365px) {
         grid-template-columns: 1fr;
-    } */
+    }
 `
