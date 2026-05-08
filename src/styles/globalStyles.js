@@ -56,6 +56,24 @@ const GlobalStyle = createGlobalStyle`
         font-size: 48%;
         }
     }
+
+    html{
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 0px;     
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--background-color);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--secondary-color);
+        border-radius: 10px; 
+        border: 3px solid var(--background-color);
+    }
+}
 `
 
 export default GlobalStyle;
