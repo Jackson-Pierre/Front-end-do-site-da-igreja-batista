@@ -1,4 +1,4 @@
-import { LinkHeader, FooterContainer, FooterBox, Copyright, FooterContent, Navigation, Visual, Local } from "./styles.js";
+import { LinkHeader, FooterContainer, FooterBox, Copyright, FooterContent, Navigation, Visual, Local } from "./style.js";
 
 import Logo from "../../assets/logos/logoFooter.svg";
 import Whatsapp from "../../assets/icon/whatsapp.svg";

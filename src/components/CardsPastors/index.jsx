@@ -1,33 +1,41 @@
+import { Container, Card, Image, Content } from "./style.js"
+
+import Pastor1 from "../../assets/Pastor1.webp"
+import Pastor2 from "../../assets/Pastor2.webp"
+import Pastor3 from "../../assets/Pastor3.webp"
+
 export function CardsPastors() {
     return (
-        <div>
-            <div>
-                <div>
-                    
-                </div>
-                <div>
-                    <h3></h3>
-                    <p></p>
-                </div>
-            </div>
-            <div>
-                <div>
+        <Container>
+            <Card>
+                <Image>
+                    <img src={Pastor1} alt="" />
+                </Image>
+                <Content>
+                    <h3>Pr. Francisco</h3>
+                    <p>Pastor do Prédio Centro</p>
+                </Content>
+            </Card>
 
-                </div>
-                <div>
-                    <h3></h3>
-                    <p></p>
-                </div>
-            </div>
-            <div>
-                <div>
+            <Card>
+                <Image>
+                    <img src={Pastor2} alt="" />
+                </Image>
+                <Content>
+                    <h3>Pr. Pedro</h3>
+                    <p>Pastor do Prédio Novo Diamantino</p>
+                </Content>
+            </Card>
 
-                </div>
-                <div>
-                    <h3></h3>
-                    <p></p>
-                </div>
-            </div>
-        </div>
+            <Card>
+                <Image>
+                    <img src={Pastor3} alt="" />
+                </Image>
+                <Content>
+                    <h3>Pr. Joemilson</h3>
+                    <p>Pastor do Prédio Borjuí</p>
+                </Content>
+            </Card>
+        </Container>
     )
 }

@@ -18,6 +18,29 @@ export const Box = styled.div`
     gap: 10.25rem;
 `
 
+export const BoxImage = styled.div`
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding: 38rem 0 10rem 6rem;
+    height: 100vh;
+    width: 100%;
+    gap: 2rem;
+    
+    h2{
+        color: var(--white);
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    p{
+        color: var(--white);
+        font-size: 1.5rem;
+        font-weight: 600;
+        max-width: 584px;
+    }
+`
+
 export const Fundamentals = styled.div`
     padding: 6rem 3rem;
     width: 100vw;
@@ -36,13 +59,50 @@ export const Fundamentals = styled.div`
     }
 `
 
-export const ContainerButtons = styled.div`
+export const ContactSection = styled.section`
+    background-color: var(--primary-color);
+    width: 100vw;
     display: flex;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    border-bottom: solid 2px var(--secondary-color);
+    padding: 8rem 0;
+    gap: 3rem;
 
-    @media (max-width: 768px) {
+    .contact-content{
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 3rem;
     }
+
+    h2{
+        color: var(--white);
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        max-width: 480px;
+    }
+
+    p{
+        color: var(--styled-font-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+        max-width: 742px;
+        text-align: center;
+    }
+`
+
+export const ContainerButtons = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 50%;
+
+    /* @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    } */
 `

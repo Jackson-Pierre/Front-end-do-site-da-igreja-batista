@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-import { Container, Box, Fundamentals, ContainerButtons } from "./style"
+import { Container, Box, Fundamentals, ContainerButtons, ContactSection, BoxImage } from "./style"
 
 import { Button } from "../../components/Button"
 import { ModalContact } from "../../components/ModalContact"
@@ -16,12 +16,12 @@ function About() {
         <Container>
             <Box>
                 <BackgroundImageFull $variant="quaternary">
-                    <div>
-                        <div>
+                    <BoxImage>
+                        <div className="content">
                             <h2>Nossa história</h2>
                             <p>Uma jornada de fé, propósito e transformação ao longo dos anos</p>
                         </div>
-                    </div>
+                    </BoxImage>
                 </BackgroundImageFull>
 
                 <Fundamentals>
@@ -34,10 +34,10 @@ function About() {
                     <CardsPastors />
                 </section>
 
-                <section>
-                    <div>
+                <ContactSection>
+                    <div className="contact-content">
                         <h2>Queremos te conhecer pessoalmente!</h2>
-                        <p>Não importa onde você está em sua jornada de fé, há um logar reservado para você em nossa mesa.</p>
+                        <p>Não importa onde você está em sua jornada de fé, há um lugar reservado para você em nossa mesa.</p>
                     </div>
                     <ContainerButtons>
                         <a href="https://maps.app.goo.gl/doB8Zy2G1as89AMP7" target="_blank" rel="noreferrer">
@@ -47,7 +47,7 @@ function About() {
                         </a>
                         <Button $variant="secondary" onClick={() => setIsOpen(true)}>Falar com um Pastor</Button>
                     </ContainerButtons>
-                </section>
+                </ContactSection>
             </Box>
             <ModalContact isOpen={isOpen} setIsOpen={() => setIsOpen(false)}>
                 <CardsContacts />

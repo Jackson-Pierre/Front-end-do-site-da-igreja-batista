@@ -6,6 +6,12 @@ import HeroEventsBackground from "../../assets/image-hero-events.webp"
 import HeroAboutBackground from "../../assets/image-hero-about.webp"
 
 export const Background = styled.div`
+    background: ${(props) => {
+            if (props.$variant === 'secondary') return `url(${HeroContribuitionsBackground})`;
+            if (props.$variant === 'tertiary') return `url(${HeroEventsBackground})`;
+            if (props.$variant === 'quaternary') return `url(${HeroAboutBackground})`;
+            return `url(${HeroBackground})`; 
+        }};
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -17,12 +23,4 @@ export const Background = styled.div`
     justify-content: center;
     margin-top: 3rem;
     width: 100vw;
-    height: 100%;
-    height: auto;
-    background: ${(props) => {
-        if (props.$variant === 'secondary') return `url(${HeroContribuitionsBackground})`;
-        if (props.$variant === 'tertiary') return `url(${HeroEventsBackground})`;
-        if (props.$variant === 'quaternary') return `url(${HeroAboutBackground})`;
-        return `url(${HeroBackground})`; 
-    }};
 `
