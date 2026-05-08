@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import * as Yup from 'yup';
+import { PatternFormat } from 'react-number-format'; // Trocado para compatibilidade com React 19
 
 import { Container, Box, MainContent, InputContainer, Button, Form, SucessModal} from "./style.js";
 
@@ -20,9 +21,18 @@ function Oracao() {
     const [isSending, setIsSending] = useState(false);
 
     const schema = Yup.object().shape({
-        name: Yup.string().required('O nome é obrigatório'),
-        phone: Yup.string().min(10, 'Digite o DDD + Número').required('O WhatsApp é obrigatório'),
-        message: Yup.string().required('O pedido de oração não pode estar vazio'),
+        name: Yup.string()
+            .required('O nome é obrigatório')
+            .min(3, 'O nome deve ter pelo menos 3 caracteres')
+            .matches(/^[A-Za-zÀ-ÿ\s]+$/, 'O nome deve conter apenas letras'),
+        phone: Yup.string()
+            .required('O WhatsApp é obrigatório')
+            .test('len', 'Telefone incompleto', (val) => {
+                const digits = val?.replace(/\D/g, ''); 
+                return digits?.length === 11;
+            }),
+        message: Yup.string()
+            .required('O pedido de oração não pode estar vazio')
     });
 
     useEffect(() => {
@@ -38,13 +48,19 @@ function Oracao() {
         e.preventDefault();
         setErrors({}); 
 
-        const formData = { name, phone, message };
+        const dataToValidate = { name, phone, message };
 
         try {
-            await schema.validate(formData, { abortEarly: false });
-
+            await schema.validate(dataToValidate, { abortEarly: false });
             setIsSending(true);
-            await axios.post(`${import.meta.env.VITE_API_URL}/prayers`, formData);
+
+            const cleanPhone = phone.replace(/\D/g, '');
+
+            await axios.post(`${import.meta.env.VITE_API_URL}/prayers`, { 
+                name: name.trim(), 
+                phone: cleanPhone, 
+                message: message.trim() 
+            });
 
             setShowSuccessModal(true);
             setName('');
@@ -85,23 +101,24 @@ function Oracao() {
 
                     <Form onSubmit={handleSubmit}>
                         <InputContainer>
-                            <label>Nome:</label>
+                            <label>Nome Completo:</label>
                             <input 
                                 type="text" 
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                placeholder="Seu Nome"
+                                placeholder="Digite seu nome"
                             />
                             {errors.name && <p>{errors.name}</p>}
                         </InputContainer>
 
                         <InputContainer>
                             <label>Seu Whatsapp:</label>
-                            <input 
-                                type="text" 
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                placeholder="65999999999"
+                            <PatternFormat 
+                                format="(##) #####-####" 
+                                value={phone} 
+                                onValueChange={(values) => setPhone(values.formattedValue)}
+                                type="text"
+                                placeholder="(65) 99999-9999"
                             />
                             {errors.phone && <p>{errors.phone}</p>}
                         </InputContainer>
@@ -111,7 +128,7 @@ function Oracao() {
                             <textarea 
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                placeholder="Seu pedido de oração"
+                                placeholder="Escreva aqui o seu pedido de oração com detalhes..."
                             />
                             {errors.message && <p>{errors.message}</p>}
                         </InputContainer>
